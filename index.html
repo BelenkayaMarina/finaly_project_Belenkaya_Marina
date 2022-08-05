@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css">
+        <title>Rock, paper, scissors!</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <style>
+            @import url('http://fonts.cdnfonts.com/css/games');
+            @import url('http://fonts.cdnfonts.com/css/opzite');
+            @import url('http://fonts.cdnfonts.com/css/battlestar');
+            
+</style>
+
+        <script>
+        window.addEventListener("load", function() {
+
+            var userChoise = document.querySelectorAll('.choise');
+
+            let userPoint = 0;
+            let computerPoint = 0;
+            let uChoise;
+
+            userChoise.forEach((uChoise) => {
+                uChoise.addEventListener("click", function () {
+                    const uClick = this.textContent;
+                    
+                    const elements = ["Rock", "Scissors", "Paper"]
+                    const computerChoise = elements[Math.floor(Math.random() * 3)];
+                    document.getElementById("result").textContent = computerChoise;
+                
+                roundWin(uClick, computerChoise);
+                updateScore();
+                winner();                 
+                });
+
+            });
+
+            //
+            function roundWin(uClick, computerChoise){
+                const currentMatch = `${uClick} vs ${computerChoise}`;
+                    if (computerChoise == uClick){
+                        document.getElementById("tie").innerHTML = "Tie!";
+                        return;
+                    }
+                    if (computerChoise === "Rock"){
+                        if (uClick === "Scissors"){
+                            computerPoint++;
+                            document.getElementById("tie").innerHTML = "Сomputer`s point!";
+                        } else{
+                            userPoint++;
+                            document.getElementById("tie").innerHTML = "Your point!";
+                            return;
+                        }
+                    }
+                    if (computerChoise === "Scissors"){
+                        if (uClick === "Paper"){
+                            computerPoint++;
+                            document.getElementById("tie").innerHTML = "Сomputer`s point!";
+                        } else{
+                            userPoint++;
+                            document.getElementById("tie").innerHTML = "Your point!";
+                            return;
+                        }
+                    }
+                    if (computerChoise === "Paper"){
+                        if (uClick === "Rock"){
+                            computerPoint++;
+                            document.getElementById("tie").innerHTML = "Сomputer`s point!";
+                        } else{
+                            userPoint++;
+                            document.getElementById("tie").innerHTML = "Your point!";
+                        }
+                    }
+                
+            }       
+
+            function winner(){
+                if (userPoint === 3 || computerPoint === 3){
+                    const winner = userPoint === 3 ? "Wow! You are win!" : "Wops. Computer wins :(";
+                    document.getElementById("tie").innerHTML = winner;
+                    return true;
+                }
+                return false;
+            }
+
+            function updateScore() {                
+                document.getElementById("userPoint").textContent = userPoint;
+                document.getElementById("computerPoint").textContent = computerPoint;
+            }
+
+            // let reset = document.getElementById("myButton");
+            // reset.document.addEventListener("click", function(){
+            //     location.reload();
+            // });
+            window.addEventListener("click", event => {
+                document.getElementById("myButton").onclick = function() {
+                    location.reload(true);
+                }
+});
+
+        });
+
+        </script>
+    </head>
+    <body>
+        <h3>Rock, paper, scissors!</h3>
+        <h4 class="conclusion" id="tie">Points</h4>
+
+        <p class="conclusion1">Choise of computer is<p id ="result">until nothing</p>
+        </p>
+        <h5>
+            Computer <p id="computerPoint">0</p> _ <p id="userPoint">0</p>You 
+        </h5>
+
+        <p class="conclusion1">Your choise is</p>
+        <div class="frame">
+        <button class="choise"><span>Rock</span></button>
+        <button class="choise"><span>Paper</span></button>
+        <button class="choise"><span>Scissors</span></button>
+        </div>
+        <button id="myButton"></button>    
+        
+
+    </body>
+            
+
+    <footer>
+        <p>Belenka Maryna &copy;</p>
+    </footer>
+</html>

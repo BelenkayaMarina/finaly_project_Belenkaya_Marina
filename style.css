@@ -1,0 +1,139 @@
+body {
+    width: 600px;
+    margin: 15px auto;
+    background-color: #fbe3e8;
+    padding: 0 20px 0 20px;
+    border: 5px solid #000000;
+    text-align: center;
+    font-family: 'OPZITE', sans-serif;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Battlestar', sans-serif;
+ color:#42bfbbe0;
+}
+
+footer {
+  margin: 0 0 0 0;
+}
+
+#myButton{
+  background:url(./images/5277847.png);
+background-size: cover;
+border: none;
+cursor: pointer;
+  width:50px;
+  height:50px;
+}
+
+h3 {
+        font-size: 28px;
+    color:#42bfbbe0;
+}
+
+.conclusion{
+    color:#5cbdb9;    
+}
+
+
+.frame {
+    width: 90%;
+    margin: 0px auto;
+    text-align: center;
+  }
+  button {
+    margin: 10px;
+  }
+
+
+.choise {
+    width: 130px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Battlestar', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+  .choise {
+    background: linear-gradient(0deg, #ebf6f5 0%, #81f0e7 100%);
+      line-height: 42px;
+      padding: 0;
+      border: none;
+    }
+    .choise span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .choise:before,
+    .choise:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: 0;
+      background: #ebf6f5;
+      box-shadow:
+       -7px -7px 20px 0px rgba(255,255,255,.9),
+       -4px -4px 5px 0px rgba(255,255,255,.9),
+       7px 7px 20px 0px rgba(0,0,0,.2),
+       4px 4px 5px 0px rgba(0,0,0,.3);
+      transition: all 0.3s ease;
+    }
+    .choise:before{
+       height: 0%;
+       width: 2px;
+    }
+    .choise:after {
+      width: 0%;
+      height: 2px;
+    }
+    .choise:hover{
+      color: #42bfbbe0;
+      background: transparent;
+    }
+    .choise:hover:before {
+      height: 100%;
+    }
+    .choise:hover:after {
+      width: 100%;
+    }
+    .choise span:before,
+    .choise span:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      background: #ebf6f5;
+      box-shadow:
+       -7px -7px 20px 0px rgba(255, 255, 255, 0),
+       -4px -4px 5px 0px rgba(255, 255, 255, 0.06),
+       7px 7px 20px 0px rgba(0,0,0,.2),
+       4px 4px 5px 0px rgba(0,0,0,.3);
+      transition: all 0.3s ease;
+    }
+    .choise span:before {
+      width: 2px;
+      height: 0%;
+    }
+    .choise span:after {
+      height: 2px;
+      width: 0%;
+    }
+    .choise span:hover:before {
+      height: 100%;
+    }
+    .choise span:hover:after {
+      width: 100%;
+    }
